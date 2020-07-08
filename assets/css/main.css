@@ -1,11 +1,8 @@
 @import url(font-awesome.min.css);
 @import url("https://fonts.googleapis.com/css?family=Lato:300,400,700|Pacifico");
+@import url("https://fonts.googleapis.com/css?family=Modak");
+@import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap");
 
-/*
-	Introspect by TEMPLATED
-	templated.co @templatedco
-	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
-*/
 
 /* Reset */
 
@@ -1589,7 +1586,7 @@
 	}
 
 	body, input, select, textarea {
-		font-family: "Lato", sans-serif;
+		font-family: "Permanent Marker", sans-serif;
 		font-size: 15pt;
 		font-weight: 300;
 		line-height: 2;
@@ -3128,20 +3125,22 @@
 			}
 
 		#header .logo {
-			font-family: 'Pacifico', cursive;
+			font-family: "Modak", cursive ;
 			display: inline-block;
 			height: inherit;
 			left: 0;
 			line-height: inherit;
 			margin: 0;
 			padding: 0;
-			position: absolute;
-			top: 0;
-			color: #e5474b;
-			font-size: 1.75em;
+			position: relative;
+			left: -30%;
+			color: rgb(229, 71, 75);
+			font-size: 3.0em;
 			text-transform: none;
-			font-weight: normal;
+			font-weight: normal; 
 			padding: 0;
+			position: relative;
+
 		}
 
 			#header .logo:hover {
