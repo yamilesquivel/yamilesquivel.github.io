@@ -3134,6 +3134,7 @@
 			padding: 0;
 			position: relative;
 			left: -30%;
+			top:0px;
 			color: rgb(229, 71, 75);
 			font-size: 3.0em;
 			text-transform: none;
@@ -3213,7 +3214,7 @@
 		.navPanelToggle:before {
 			-moz-osx-font-smoothing: grayscale;
 			-webkit-font-smoothing: antialiased;
-			font-family: FontAwesome;
+			font-family: "Pacifico",cursive;
 			font-style: normal;
 			font-weight: normal;
 			text-transform: none !important;
