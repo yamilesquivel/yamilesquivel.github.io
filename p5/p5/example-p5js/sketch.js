@@ -1,4 +1,4 @@
-let cb;
+let cb;      //checkboxes
 var capvid; //camara
 let gui;    //interfaz grafica de usuario
 let on;     //boton 
@@ -15,7 +15,7 @@ function setup() {
   capvid.hide();
  
  
-  escribir = new oracionesEnObjeto(color(250),3,90,"Hola!,esto es para mostrar la libreria touch.gui para interfaz de usuario",29);
+  presentacion = new oracionesEnObjeto(color(250),3,90,"Hola!,esto es para mostrar la libreria touch.gui de p5.js ",33);
 
     
    gui = createGui();
@@ -45,9 +45,10 @@ function draw() {
     //textSize(500);
     //text("hola",300,300);
 
-   escribir.show()
+   presentacion.show()
 
-   if(cb.isPressed) { 
+   if(cb.isHeld) {
+   cb.val=true; 
   rect(400,200,400,60);
     }
    
@@ -90,8 +91,5 @@ function xfPuntero()
   ellipse(mouseX+ random(25),mouseY+random(25),15,15);
   
 }
-
-
-
 
 
