@@ -9,13 +9,25 @@ class  oracionesEnObjeto {
                   this.size1=size;
                     }
 show(){
-
  fill(this.colorHex);
  textSize(this.size1);
- 
  text(this.texto1,this.posX1,this.posY1);
+}
+hide(){
+	fill(this.colorHex = "#000000");
+	textSize(this.size1);
+	text(this.texto1,this.posX1,this.posY1)
+}
+
 
 
 }
 
-}
+class oracionesEnObjeto2 extends oracionesEnObjeto {
+	constructor(){
+
+	}
+	hide(){
+
+	}
+} 

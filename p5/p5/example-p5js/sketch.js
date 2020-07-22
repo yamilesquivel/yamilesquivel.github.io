@@ -10,86 +10,63 @@ let escribir ;     //texto
 function setup() {
   createCanvas(windowWidth,windowHeight); //lienzo  
   
-  capvid =createCapture(VIDEO); 
+  /*capvid =createCapture(VIDEO); 
   capvid.size(320,240);
   capvid.hide();
- 
- 
-  presentacion = new oracionesEnObjeto(color(250),3,90,"Hola!,esto es para mostrar la libreria touch.gui de p5.js ",33);
-
+ */
+  presentacion = new oracionesEnObjeto(color(250),2,50,"Hola!,esto es para mostrar la libreria touch.gui de p5.js ",33);
+  despedida = new oracionesEnObjeto(color(250),windowHeight/2,windowHeight-10,"Gracias por haber ingresado ;)",33);
     
    gui = createGui();
-   //creando boton
-   on = createButton("Button", 10, 90,150,50);
-
-   //Creando Toggle
-    t = createToggle("Toggle", 200, 15, 350, 50);
-
-    cb=createCheckbox("confir",50,70);
-    
+   gui.loadStyle("TerminalYellow");
+   //creando boton  seteando caracteristicas
+    on = createButton("start ?", windowWidth/2,windowHeight/2,150,50);
     on.setStyle({
-    fillBg: color("#a99e4e"),
+    fillBg: color("#ed225d"),
     rounding: 25,
     textSize: 20,
   });
- 
+
+  
     
 }
-  
-
 
 function draw() {
+
+  
   background("#000000"); //color del lienzo
-  drawGui(); 
+  drawGui();
+  // image(capvid,200,95,720,420);
+  presentacion.show();
 
-    //textSize(500);
-    //text("hola",300,300);
-
-   presentacion.show()
-
-   if(cb.isHeld) {
-   cb.val=true; 
-  rect(400,200,400,60);
-    }
-   
-
- // image(capvid,200,95,720,420);
- 
-   if(t.onPressed) { 
-    
-  rect(400,200,55,60);
-    }
-   
-  if(on.isPressed) {
-        print( on.label + " is pressed. "+  i++ );
+  if(on.isHeld){
+  presentacion.hide();
+  
       }
 
 
-  if (on.isHeld) {
-    // Draw an ellipse when Button is he.
-
-    fill(132,206,9);
-    textSize(250);
-    text(" size "+i*10,50,250);
-//   ellipse(200, 300, 100);
-    
-  }
-
-
-  /// Add these lines below sketch to prevent scrolling on mobile
-function touchMoved() {
+function touchMoved() {/// Add these lines below sketch to prevent scrolling on mobile
   // do some stuff
   return false;
 }     
 
 }
 
-function xfPuntero()
+
+class efectoPuntero{
+
+        constructor(){
+
+        }
+     show()
 {
 
-  fill(0,random(250),random(250),random(250));
-  ellipse(mouseX+ random(25),mouseY+random(25),15,15);
+fill(0,random(250),random(250),random(250));
+ellipse(mouseX+ random(25),mouseY+random(25),15,15);
   
 }
+}
+
+
 
 

@@ -1785,8 +1785,11 @@
 		color: #e5474b;
 	}
 
-	h1, h2, h3, h4, h5, h6 {
+	h1, h2, h4, h5, h6 {
 		color: #e5474b;
+	}
+	h3 {
+		color: #0366d6 ;
 	}
 
 	blockquote {
@@ -3700,7 +3703,7 @@
 			}
 
 				#three .inner article p {
-					color: #717171;
+					color: #24292e;
 				}
 
 				#three .inner article .icon {
