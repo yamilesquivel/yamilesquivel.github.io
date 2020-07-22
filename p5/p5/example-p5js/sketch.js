@@ -1,7 +1,7 @@
 let cb;      //checkboxes
 var capvid; //camara
 let gui;    //interfaz grafica de usuario
-let on;     //boton 
+let bt;     //boton 
 let t;       //toogle
 let i=0;     //contador
 let escribir ;     //texto
@@ -20,10 +20,10 @@ function setup() {
    gui = createGui();
    gui.loadStyle("TerminalYellow");
    //creando boton  seteando caracteristicas
-    on = createButton("start ?", windowWidth/2,windowHeight/2,150,50);
-    on.setStyle({
+    bt = createButton("start ?", windowWidth/2.5,windowHeight/2.5,250,100);
+    bt.setStyle({
     fillBg: color("#ed225d"),
-    rounding: 25,
+    rounding: 5,
     textSize: 20,
   });
 
@@ -39,7 +39,7 @@ function draw() {
   // image(capvid,200,95,720,420);
   presentacion.show();
 
-  if(on.isHeld){
+  if(bt.isHeld){
   presentacion.hide();
   
       }
