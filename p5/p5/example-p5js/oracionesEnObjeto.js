@@ -11,6 +11,7 @@ class  oracionesEnObjeto {
 show(){
  fill(this.colorHex);
  textSize(this.size1);
+ textFont('Pacifico');
  text(this.texto1,this.posX1,this.posY1);
 }
 hide(){
