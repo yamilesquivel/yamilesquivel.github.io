@@ -18,14 +18,7 @@ paso del tiempo.
 
   [buymeacoffee]: https://www.buymeacoffee.com/qrxn95D
   [buymeacoffee-shield]: https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png  
-  [![mercado libre ][mercadolibre-shield]][mecadolibre]
   
-  [mercadolibre]:
-  [mercadolibre-shield]:https://img.icons8.com/officel/40/000000/coins.png
-  
-
-
-
   
 - - - - -
 
