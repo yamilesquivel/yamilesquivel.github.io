@@ -1,8 +1,8 @@
 #                                  Yamil Esquivel - Portfolio 
 
 Este repositorio fue creado con la razon de mostrar mediante èl diferentes herramientas que voy descubriendo y
-que pruebo tratando de generar alguna visual para que sea mas amigable con el lector esto tambien esta sujeto a cambios con el
-paso del tiempo. 
+que pruebo tratando de generar alguna parte visual para que sea mas amigable con el lector/usuario. Asi que esto tambien estarà sujeto a cambios con el
+paso del tiempo.  
 
 - - - - -
 ##  Social Badges
