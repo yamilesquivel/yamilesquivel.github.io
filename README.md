@@ -3,6 +3,9 @@
 
 <h1 align="center">                              Yamil Esquivel - Portfolio </h1>
 
+![GitHub commit activity](https://img.shields.io/github/commit-activity/y/yamilesquivel/yamilesquivel.github.io?style=plastic)
+![GitHub repo size](https://img.shields.io/github/repo-size/yamilesquivel/yamilesquivel.github.io)
+
 ## Motivation
 
 Este repositorio fue creado con la razon de mostrar mediante èl diferentes herramientas que voy descubriendo y
@@ -14,7 +17,8 @@ paso del tiempo.
 
   ![GitHub followers](https://img.shields.io/github/followers/yamilesquivel?style=social)
   [![Twitter Follow](https://img.shields.io/twitter/follow/yamilesquiveltw.svg?style=social&label=Follow)](https://twitter.com/yamilesquiveltw)
-
+  
+  
 ## Donation Badge 
 
   Si deseas realizar una colaboracion.....
