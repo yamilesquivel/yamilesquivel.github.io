@@ -1,4 +1,9 @@
-#                                  Yamil Esquivel - Portfolio 
+![imagen-de-portada-de-linkedin](https://media-exp1.licdn.com/dms/image/C4E16AQEJF9JAzuh4Bw/profile-displaybackgroundimage-shrink_200_800/0?e=1602720000&v=beta&t=tA_R8JfDFWmvKb_wn9EgIb3tA3SX2nlXCMQwba0rjfE)
+
+
+<h1 align="center">                              Yamil Esquivel - Portfolio </h1>
+
+## Motivation
 
 Este repositorio fue creado con la razon de mostrar mediante èl diferentes herramientas que voy descubriendo y
 que pruebo tratando de generar alguna parte visual para que sea mas amigable con el lector/usuario. Asi que esto tambien estarà sujeto a cambios con el
@@ -10,7 +15,7 @@ paso del tiempo.
   ![GitHub followers](https://img.shields.io/github/followers/yamilesquivel?style=social)
   [![Twitter Follow](https://img.shields.io/twitter/follow/yamilesquiveltw.svg?style=social&label=Follow)](https://twitter.com/yamilesquiveltw)
 
-## Dontaion Badge 
+## Donation Badge 
 
   Si deseas realizar una colaboracion.....
   
