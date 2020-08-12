@@ -1,4 +1,4 @@
-![imagen-de-portada-de-linkedin](https://media-exp1.licdn.com/dms/image/C4E16AQEJF9JAzuh4Bw/profile-displaybackgroundimage-shrink_200_800/0?e=1602720000&v=beta&t=tA_R8JfDFWmvKb_wn9EgIb3tA3SX2nlXCMQwba0rjfE)
+![imagen-de-portada](https://camo.githubusercontent.com/bcc89bdcce31adcbf1db9f2e49a0d85b1218e00d/68747470733a2f2f756e73706c6173682e636f6d2f626c6f672f636f6e74656e742f696d616765732f323032302f30382f666f6f7465722d616c742e6a7067)
 
 
 <h1 align="center">                              Yamil Esquivel - Portfolio </h1>
