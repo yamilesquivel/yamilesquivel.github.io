@@ -2,7 +2,7 @@
 @import url("https://fonts.googleapis.com/css?family=Lato:300,400,700|Pacifico");
 @import url("https://fonts.googleapis.com/css?family=Modak");
 @import url("https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap");
-
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:wght@700&display=swap');
 
 /* Reset */
 
@@ -1586,7 +1586,7 @@
 	}
 
 	body, input, select, textarea {
-		font-family: "Permanent Marker", sans-serif;
+		font-family: 'Courier Prime', monospace;
 		font-size: 15pt;
 		font-weight: 300;
 		line-height: 2;
@@ -3369,7 +3369,7 @@
 		color: #f2a3a5;
 		padding: 13em 0 11em 0;
 		background-color: #0c0c0c;
-		background-image: url("../../images/banner.jpg");
+		background-image: url("../../images/banner2.jpeg");
 		background-size: cover;
 		background-repeat: no-repeat;
 		background-position: 15% left;
