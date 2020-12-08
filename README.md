@@ -36,4 +36,4 @@ paso del tiempo.
 Dado que este repositorio es mas que nada de forma expositiva quiero poder recibir opiniones consructivas acerca del mismo cualquier forma en la que lo podria mejorar ,probando nuevas herramientas o incluso cursos de capacitacion sobre informatica. 
 Toda criticas que me aporten a mejorar y adquirir experiencia.
 
-[![exercism](https://assets.exercism.io/assets/logo-white-e3be059a4bfc4bf65f196a12105e9cff389b5a67f2065a0862d4ff6153571ef5.png)](https://exercism.io/profiles/yamilesquivel)
+[![exercism](https://raw.githubusercontent.com/exercism/website-icons/master/emoji/exercism.png)](https://exercism.io/profiles/yamilesquivel)
