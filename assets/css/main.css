@@ -1660,7 +1660,7 @@
 		font-weight: 700;
 		line-height: 1.5;
 		margin: 0 0 1em 0;
-		text-transform: uppercase;
+		text-transform: capitalize;
 	}
 
 		h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
@@ -3099,7 +3099,7 @@
 	}
 
 	#header {
-		background: #1c1c1c;
+		background: #070707;
 		color: #d5d5d5;
 		cursor: default;
 		height: 5em;
@@ -3129,27 +3129,27 @@
 			}
 
 		#header .logo {
-			font-family: "Modak", cursive ;
+			font-family: "Pacifico", cursive ;
 			display: inline-block;
 			height: inherit;
-			left: 0;
+			left: 0px;
 			line-height: inherit;
-			margin: 0;
-			padding: 0;
+			margin: 0px;
+			padding: 0px;
 			position: relative;
 			left: 0px;
-			top:0px;
-			color: rgb(229, 71, 75);
-			font-size: 3.0em;
+			top:0;
+			color: rgb(248, 244, 9);
+			font-size: 2.0em;
 			text-transform: none;
-			font-weight: normal; 
-			padding: 0;
-			position: relative;
+			font-weight: bold; 
+			padding: 0px;
+			position: absolute;
 
 		}
 
 			#header .logo:hover {
-				color: rgba(229, 71, 75, 0.75);
+				color: rgb(242, 248, 248);
 			}
 
 		#header a {
@@ -3158,10 +3158,10 @@
 			-ms-transition: color 0.2s ease-in-out;
 			transition: color 0.2s ease-in-out;
 			display: inline-block;
-			padding: 0 2em;
+			padding: 0 1em;
 			color: #ffffff;
 			text-decoration: none;
-			text-transform: uppercase;
+			text-transform: initial;
 			font-weight: 700;
 			font-size: .85em;
 		}
@@ -3365,8 +3365,9 @@
 /* Banner */
 
 	#banner {
+		font-family: "Modak";
 		background-color: #e5474b;
-		color: #f2a3a5;
+		color: #fafafa;
 		padding: 13em 0 11em 0;
 		background-color: #0c0c0c;
 		background-image: url("../../images/pic02.jpg");
@@ -3510,11 +3511,15 @@
 			}
 
 		#banner h1 {
-			font-size: 2em;
+			font-size: 5em;
 			margin: 0 0 1em 0;
 			padding: 0;
-			letter-spacing: 3px;
-			font-weight: 700;
+			letter-spacing: -5px;
+			font-weight: 100;
+		}
+		#banner h1:hover {
+		
+			color: rgb(248, 244, 9);
 		}
 
 			#banner h1 span {
@@ -3747,10 +3752,11 @@
 /* Footer */
 
 	#footer {
-		background-color: #1c1c1c;
-		color: #f2a3a5;
+		background: #070707;
+		color: #ffffff;
 		padding: 4em 0 2em 0;
-		background: #1c1c1c;
+		background: #070707;
+
 	}
 
 		#footer input, #footer select, #footer textarea {
