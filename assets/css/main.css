@@ -3511,11 +3511,11 @@
 			}
 
 		#banner h1 {
-			font-size: 5em;
+			font-size: 6em;
 			margin: 0 0 1em 0;
 			padding: 0;
-			letter-spacing: -5px;
-			font-weight: 100;
+			letter-spacing: -0.5px;
+			font-weight: 400;
 		}
 		#banner h1:hover {
 		
