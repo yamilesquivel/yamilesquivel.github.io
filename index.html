@@ -1,8 +1,16 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+ </head>
+<body>
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Portfolio personal de Yamil Esquivel - Desarrollador IT con proyectos, repositorios y recursos de aprendizaje">
     <meta name="keywords" content="Yamil Esquivel, portfolio, desarrollador, programador, IT, proyectos, github, linkedin">
     <meta name="author" content="Yamil Esquivel">
@@ -26,18 +34,8 @@
     <!-- Canonical URL -->
     <link rel="canonical" href="https://tu-dominio.com/">
     
-    <!-- Favicon -->
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
-    <link rel="manifest" href="assets/favicon/site.webmanifest">
-    
-    <!-- Preconnect para mejorar rendimiento -->
-    <link rel="preconnect" href="https://www.googletagmanager.com">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    
-    <!-- CSS -->
-    <link rel="stylesheet" href="assets/css/main.css">
+    <!-- Favicon - manteniendo el mismo enlace original -->
+    <link rel="shortcut icon" href="https://www.flaticon.com/svg/static/icons/svg/2037/2037751.svg">
     
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
@@ -49,132 +47,121 @@
     </script>
     
     <title>Yamil Esquivel | Portfolio Personal Development IT</title>
+    
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Enlace al CSS externo -->
+    <link rel="stylesheet" href="assets/css/main.css">
 </head>
 <body>
-    <!-- Header -->
-    <header id="header">
-        <div class="container">
-            <a href="index.html" class="logo" aria-label="Inicio - Yamil Esquivel Portfolio">Yamil Esquivel</a>
-            <nav id="nav" aria-label="Navegación principal">
-                <button class="nav-toggle" aria-expanded="false" aria-controls="nav-menu">
-                    <span class="sr-only">Menú de navegación</span>
-                    <span class="hamburger"></span>
-                </button>
-                <ul id="nav-menu" class="nav-list">
-                    <li><a href="index.html" aria-current="page">Inicio</a></li>
-                    <li><a href="blog.html">Blog</a></li>
-                    <li><a href="proyects.html">Proyectos</a></li>
-                    <li><a href="followed.html">Seguido</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-
-    <!-- Banner Section -->
-    <section id="banner" aria-labelledby="banner-title">
-        <div class="container">
-            <h1 id="banner-title">Portfolio & Links</h1>
-            <div class="social-links">
-                <ul class="social-icons">
-                    <li>
-                        <a href="https://twitter.com/tu-usuario" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Twitter - Yamil Esquivel">
-                            <i class="fa fa-twitter" aria-hidden="true"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://facebook.com/tu-usuario" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Facebook - Yamil Esquivel">
-                            <i class="fa fa-facebook" aria-hidden="true"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://linkedin.com/in/tu-usuario" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="LinkedIn - Yamil Esquivel">
-                            <i class="fa fa-linkedin" aria-hidden="true"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://archive.org/" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Recursos de aprendizaje - Archive.org">
-                            <i class="fa fa-book" aria-hidden="true"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://github.com/yamilesquivel" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="GitHub - Repositorios de Yamil Esquivel">
-                            <i class="fa fa-github" aria-hidden="true"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://gitlab.com/" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="GitLab">
-                            <i class="fa fa-gitlab" aria-hidden="true"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://codepen.io/" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="CodePen">
-                            <i class="fa fa-codepen" aria-hidden="true"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://docs.google.com/document/d/tu-resume" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Currículum vitae - Descargar PDF">
-                            <i class="fa fa-file-text" aria-hidden="true"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://github.com/yamilesquivel?tab=repositories" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="Repositorios adicionales - GitHub">
-                            <i class="fa fa-link" aria-hidden="true"></i>
-                        </a>
-                    </li>
-                </ul>
+    <div class="container">
+        <div class="profile">
+            <div class="profile-img">
+                Y E
             </div>
+            <h1 class="profile-name">Yamil Esquivel</h1>
+            <p class="profile-title">Desarrollador IT & Soluciones Tecnológicas</p>
         </div>
-    </section>
-
-    <!-- Footer -->
-    <footer id="footer" aria-label="Pie de página">
-        <div class="container">
-            <div class="footer-content">
-                <div class="copyright" style="text-align: center;">
-                    <cite>
-                        "We know what we are, but know not what we may be" - William Shakespeare &copy; <span id="current-year"></span>
-                    </cite>
-                </div>
-                <div class="footer-links" style="text-align: center; margin-top: 1rem;">
-                    <a href="privacy.html" class="footer-link">Política de Privacidad</a>
-                    <a href="sitemap.xml" class="footer-link">Mapa del Sitio</a>
-                </div>
-            </div>
+        
+        <div class="bio">
+            "We know what we are, but know not what we may be" - William Shakespeare
+        </div>
+        
+        <div class="links-container">
+            <a href="http://bit.ly/twiter-3gw8hL5" class="link-btn twitter">
+                <i class="fab fa-twitter"></i> Twitter
+            </a>
+            <a href="http://bit.ly/facebook-2QTt0xm" class="link-btn facebook">
+                <i class="fab fa-facebook-f"></i> Facebook
+            </a>
+            <a href="http://bit.ly/likedin-2Pf0Nkh" class="link-btn linkedin">
+                <i class="fab fa-linkedin-in"></i> LinkedIn
+            </a>
+            <a href="https://archive.org/" class="link-btn resources">
+                <i class="fas fa-book-open"></i> Resource-learn
+            </a>
+            <a href="http://bit.ly/repositorios-3nd5ojo" class="link-btn github">
+                <i class="fab fa-github"></i> Github
+            </a>
+            <a href="https://gitlab.com/" class="link-btn gitlab">
+                <i class="fab fa-gitlab"></i> Gitlab
+            </a>
+            <a href="https://codepen.io/" class="link-btn codepen">
+                <i class="fab fa-codepen"></i> Codepen
+            </a>
+            <a href="http://bit.ly/docgoogle-3vcQuMV" class="link-btn resume">
+                <i class="fas fa-file-text"></i> resume
+            </a>
+            <a href="https://github.com/yamilesquivel?tab=repositories" class="link-btn">
+                <i class="fas fa-link"></i> Anexo
+            </a>
+        </div>
+        
+        <div class="divider"></div>
+        
+        <div class="social-links">
+            <a href="http://bit.ly/twiter-3gw8hL5" class="social-icon twitter" aria-label="Twitter">
+                <i class="fab fa-twitter"></i>
+            </a>
+            <a href="http://bit.ly/facebook-2QTt0xm" class="social-icon facebook" aria-label="Facebook">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="http://bit.ly/likedin-2Pf0Nkh" class="social-icon linkedin" aria-label="LinkedIn">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="http://bit.ly/repositorios-3nd5ojo" class="social-icon github" aria-label="GitHub">
+                <i class="fab fa-github"></i>
+            </a>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="copyright">
+            &copy; <span id="current-year"></span> Yamil Esquivel. Todos los derechos reservados.
+        </div>
+        <div class="copyright">
+            Portfolio Personal de Desarrollo IT
         </div>
     </footer>
-
-    <!-- Scripts -->
-    <script>
-        // Actualizar año automáticamente en el footer
-        document.getElementById('current-year').textContent = new Date().getFullYear();
-        
-        // Menú responsive
-        document.addEventListener('DOMContentLoaded', function() {
-            const navToggle = document.querySelector('.nav-toggle');
-            const navMenu = document.getElementById('nav-menu');
-            
-            if (navToggle && navMenu) {
-                navToggle.addEventListener('click', function() {
-                    const expanded = this.getAttribute('aria-expanded') === 'true';
-                    this.setAttribute('aria-expanded', !expanded);
-                    navMenu.style.display = !expanded ? 'block' : 'none';
-                });
-            }
-            
-            // Cerrar menú al hacer clic fuera de él en móviles
-            document.addEventListener('click', function(event) {
-                if (window.innerWidth < 768 && navMenu.style.display === 'block') {
-                    const isClickInside = navMenu.contains(event.target) || navToggle.contains(event.target);
-                    if (!isClickInside) {
-                        navMenu.style.display = 'none';
-                        navToggle.setAttribute('aria-expanded', 'false');
-                    }
-                }
-            });
-        });
-    </script>
     
-    <!-- Font Awesome para iconos (si no está incluido en main.css) -->
-    <script src="https://kit.fontawesome.com/tu-codigo-fontawesome.js" crossorigin="anonymous"></script>
+    <!-- Enlace al JavaScript externo -->
+    <script src="assets/js/main.js"></script>
 </body>
 </html>
+
+
+    
+              <script>
+                              // assets/js/main.js
+// Actualizar año automáticamente
+document.getElementById('current-year').textContent = new Date().getFullYear();
+
+// Efecto hover mejorado para móviles
+document.querySelectorAll('.link-btn, .social-icon').forEach(element => {
+    element.addEventListener('touchstart', function() {
+        this.classList.add('active');
+    });
+    
+    element.addEventListener('touchend', function() {
+        this.classList.remove('active');
+    });
+});
+
+// Analytics para clicks en enlaces
+document.querySelectorAll('.link-btn, .social-icon').forEach(link => {
+    link.addEventListener('click', function() {
+        if (typeof gtag === 'function') {
+            gtag('event', 'link_click', {
+                'event_category': 'engagement',
+                'event_label': this.textContent.trim() || this.getAttribute('aria-label')
+            });
+        }
+    });
+});
+
+
+              </script>
+                        </body>
+                        </html>
+                    
