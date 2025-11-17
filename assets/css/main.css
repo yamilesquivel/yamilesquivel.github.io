@@ -308,6 +308,31 @@ body.dark .theme-toggle .fa-sun {
   border: 0;
 }
 
+
+/* ✅ Fallback visual para íconos si Font Awesome no carga */
+.fallback-icon {
+  font-size: 0.85em;
+  opacity: 0.7;
+  margin-right: 6px;
+  font-family: monospace;
+  display: none; /* oculto por defecto */
+}
+
+/* Mostrar fallback solo si el ícono FA no se renderizó */
+i[class*="fa-"]:empty + .fallback-icon {
+  display: inline;
+}
+
+/* Para los íconos sociales (donde no hay texto) */
+.social-icon i:empty::before {
+  content: "?";
+  font-family: monospace;
+  font-weight: bold;
+}
+
+
+
+
 /* Responsive */
 @media (max-width: 480px) {
   .profile-name { font-size: 1.8rem; }

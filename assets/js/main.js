@@ -1,68 +1,53 @@
-// ✅ main.js — con toggle manual de dark/light mode + persistencia
 document.addEventListener('DOMContentLoaded', function () {
   // 📅 Año automático
   const yearEl = document.getElementById('current-year');
-  if (yearEl) {
-    yearEl.textContent = new Date().getFullYear();
-  }
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-  // 🌓 Tema: inicializar desde localStorage o preferencia del sistema
+  // 🌓 Tema
   const toggleBtn = document.getElementById('theme-toggle');
-  
   function setTheme(isDark) {
-    if (isDark) {
-      document.body.classList.add('dark');
-      localStorage.setItem('theme', 'dark');
-    } else {
-      document.body.classList.remove('dark');
-      localStorage.setItem('theme', 'light');
-    }
-    // Actualizar ícono de favicon si lo deseas (opcional)
+    document.body.classList.toggle('dark', isDark);
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
   }
 
-  // Leer preferencia guardada o del sistema
-  const savedTheme = localStorage.getItem('theme');
-  const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  // Leer preferencia
+  const saved = localStorage.getItem('theme');
+  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  setTheme(saved === 'dark' || (!saved && prefersDark));
 
-  if (savedTheme === 'dark' || (!savedTheme && systemPrefersDark)) {
-    setTheme(true);
-  } else {
-    setTheme(false);
-  }
-
-  // 🖱️ Evento del botón de toggle
-  if (toggleBtn) {
-    toggleBtn.addEventListener('click', () => {
-      const isNowDark = !document.body.classList.contains('dark');
-      setTheme(isNowDark);
-    });
-  }
-
-  // 🖱️ Mejora UX en touch para botones
-  const interactiveEls = document.querySelectorAll('.link-btn, .social-icon, .theme-toggle');
-  interactiveEls.forEach(el => {
-    el.addEventListener('touchstart', () => el.classList.add('active'), { passive: true });
-    const remove = () => el.classList.remove('active');
-    el.addEventListener('touchend', remove, { passive: true });
-    el.addEventListener('touchcancel', remove, { passive: true });
-    el.addEventListener('touchmove', remove, { passive: true });
+  // Toggle
+  toggleBtn?.addEventListener('click', () => {
+    setTheme(!document.body.classList.contains('dark'));
   });
 
-  // 📊 Analytics en clicks (seguro)
+  // 🖱️ Touch UX
+  document.querySelectorAll('.link-btn, .social-icon, .theme-toggle').forEach(el => {
+    const toggleActive = () => el.classList.toggle('active');
+    el.addEventListener('touchstart', toggleActive, { passive: true });
+    ['touchend', 'touchcancel', 'touchmove'].forEach(e => 
+      el.addEventListener(e, toggleActive, { passive: true })
+    );
+  });
+
+  // 📊 Analytics (seguro)
   document.querySelectorAll('.link-btn, .social-icon').forEach(link => {
-    link.addEventListener('click', function () {
-      const label = this.textContent.trim() || this.getAttribute('aria-label') || 'link';
+    link.addEventListener('click', () => {
+      const label = link.getAttribute('aria-label') || link.textContent.trim() || 'link';
       if (typeof gtag === 'function') {
-        gtag('event', 'link_click', {
-          event_category: 'engagement',
-          event_label: label
-        });
+        gtag('event', 'link_click', { event_category: 'engagement', event_label: label });
       }
     });
   });
 
-  // 🚀 Enviar vista de página
-  if (typeof gtag === 'function') {
-    gtag('event', 'page_view');
-  }
+  // 🚀 Page view
+  if (typeof gtag === 'function') gtag('event', 'page_view');
+
+  // ✅ Verificación de íconos (opcional: para debugging)
+  setTimeout(() => {
+    const missingIcons = Array.from(document.querySelectorAll('i[class*="fa-"]'))
+      .filter(icon => !icon.classList.contains('fa') && icon.innerHTML === '');
+    if (missingIcons.length > 0) {
+      console.warn('[WARN] Algunos íconos de Font Awesome no se cargaron. ¿Está bloqueado el CDN?', missingIcons);
+    }
+  }, 3000);
 });

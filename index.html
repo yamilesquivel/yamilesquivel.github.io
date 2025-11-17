@@ -25,24 +25,27 @@
 
   <link rel="canonical" href="https://tu-dominio.com/">
 
-  <!-- Favicon -->
+  <!-- ✅ Favicon -->
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
 
-  <!-- Preconnect -->
-  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
-  <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+  <!-- ✅ Font Awesome CDN (versión segura, sin integrity) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-  <!-- Font Awesome (subset) -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/brands.min.css" integrity="sha512-9YHSK59/rjvhtDcY/b+4rdnl0V4LPDWdkKceBl8WVjTV7Gco89hTsXISzpmnjpEu3zP6L4CzC/pAm8OUZQ==" crossorigin="anonymous" referrerpolicy="no-referrer">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/solid.min.css" integrity="sha512-0kR1KsSj6bUQv1Q6c4x1LzZv8Zj5j4KxH9ZvV6bK9J1xJQ4yH2Y6J2sK8QYb3bH9jQ9Q9Q9Q9Q9Q9Q9Q9Q9Q==" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <!-- ✅ PWA Manifest -->
+  <link rel="manifest" href="manifest.json">
 
-  <!-- CSS principal -->
+  <!-- ✅ iOS Support -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Yamil Dev">
+
+  <!-- ✅ CSS principal -->
   <link rel="stylesheet" href="assets/css/main.css">
 
   <title>Yamil Esquivel | Portfolio Personal Development IT</title>
 </head>
 <body>
-  <!-- ✅ Structured Data (SEO) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -55,8 +58,7 @@
       "http://bit.ly/likedin-2Pf0Nkh",
       "http://bit.ly/repositorios-3nd5ojo"
     ],
-    "jobTitle": "Desarrollador IT & Soluciones Tecnológicas",
-    "description": "Desarrollador IT con experiencia en soluciones tecnológicas, proyectos open-source y recursos educativos."
+    "jobTitle": "Desarrollador IT & Soluciones Tecnológicas"
   }
   </script>
 
@@ -64,7 +66,6 @@
     <section class="profile" aria-labelledby="profile-heading">
       <div class="profile-img initials" role="img" aria-label="Foto de perfil de Yamil Esquivel">
         Y E
-        <!-- <img src="assets/img/profile.jpg" alt="Yamil Esquivel" loading="lazy"> -->
       </div>
       <h1 id="profile-heading" class="profile-name">Yamil Esquivel</h1>
       <p class="profile-title">Desarrollador IT & Soluciones Tecnológicas</p>
@@ -79,31 +80,31 @@
 
     <nav class="links-container" aria-label="Enlaces principales">
       <a href="http://bit.ly/twiter-3gw8hL5" class="link-btn twitter" target="_blank" rel="noopener noreferrer" role="button">
-        <i class="fab fa-twitter" aria-hidden="true"></i> Twitter
+        <i class="fab fa-twitter" aria-hidden="true"></i><span class="fallback-icon">[TW]</span> Twitter
       </a>
       <a href="http://bit.ly/facebook-2QTt0xm" class="link-btn facebook" target="_blank" rel="noopener noreferrer" role="button">
-        <i class="fab fa-facebook-f" aria-hidden="true"></i> Facebook
+        <i class="fab fa-facebook-f" aria-hidden="true"></i><span class="fallback-icon">[FB]</span> Facebook
       </a>
       <a href="http://bit.ly/likedin-2Pf0Nkh" class="link-btn linkedin" target="_blank" rel="noopener noreferrer" role="button">
-        <i class="fab fa-linkedin-in" aria-hidden="true"></i> LinkedIn
+        <i class="fab fa-linkedin-in" aria-hidden="true"></i><span class="fallback-icon">[LI]</span> LinkedIn
       </a>
       <a href="https://archive.org/" class="link-btn resources" target="_blank" rel="noopener noreferrer" role="button">
-        <i class="fas fa-book-open" aria-hidden="true"></i> Resource-learn
+        <i class="fas fa-book-open" aria-hidden="true"></i><span class="fallback-icon">[📚]</span> Resource-learn
       </a>
       <a href="http://bit.ly/repositorios-3nd5ojo" class="link-btn github" target="_blank" rel="noopener noreferrer" role="button">
-        <i class="fab fa-github" aria-hidden="true"></i> GitHub
+        <i class="fab fa-github" aria-hidden="true"></i><span class="fallback-icon">[GH]</span> GitHub
       </a>
       <a href="https://gitlab.com/" class="link-btn gitlab" target="_blank" rel="noopener noreferrer" role="button">
-        <i class="fab fa-gitlab" aria-hidden="true"></i> GitLab
+        <i class="fab fa-gitlab" aria-hidden="true"></i><span class="fallback-icon">[GL]</span> GitLab
       </a>
       <a href="https://codepen.io/" class="link-btn codepen" target="_blank" rel="noopener noreferrer" role="button">
-        <i class="fab fa-codepen" aria-hidden="true"></i> CodePen
+        <i class="fab fa-codepen" aria-hidden="true"></i><span class="fallback-icon">[CP]</span> CodePen
       </a>
       <a href="http://bit.ly/docgoogle-3vcQuMV" class="link-btn resume" target="_blank" rel="noopener noreferrer" role="button">
-        <i class="fas fa-file-alt" aria-hidden="true"></i> Resume
+        <i class="fas fa-file-alt" aria-hidden="true"></i><span class="fallback-icon">[📄]</span> Resume
       </a>
       <a href="https://github.com/yamilesquivel?tab=repositories" class="link-btn" target="_blank" rel="noopener noreferrer" role="button">
-        <i class="fas fa-link" aria-hidden="true"></i> Anexo
+        <i class="fas fa-link" aria-hidden="true"></i><span class="fallback-icon">[🔗]</span> Anexo
       </a>
     </nav>
 
@@ -141,18 +142,27 @@
     <span class="sr-only">Alternar tema claro/oscuro</span>
   </button>
 
-  <!-- Google Analytics -->
+  <!-- ✅ Google Analytics (seguro) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-    gtag('config', 'G-XXXXXXXXXX', {
-      anonymize_ip: true
-    });
+    gtag('config', 'G-XXXXXXXXXX', { anonymize_ip: true });
   </script>
 
-  <!-- JavaScript principal -->
+  <!-- ✅ Registrar Service Worker -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/service-worker.js')
+          .then(reg => console.log('[SW] Registrado:', reg.scope))
+          .catch(err => console.warn('[SW] Error:', err));
+      });
+    }
+  </script>
+
+  <!-- ✅ JavaScript principal -->
   <script src="assets/js/main.js" defer></script>
 </body>
 </html>
