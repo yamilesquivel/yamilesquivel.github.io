@@ -1,107 +1,99 @@
-/* ✅ main.css — con soporte completo para dark/light mode manual */
+/* ✅ main.css — Dark Cosmos: fondo negro mate con partículas estelares y neón suave */
 :root {
-  /* Light mode por defecto */
   --primary: #4361ee;
-  --secondary: #3f37c9;
+  --secondary: #7209b7;
   --accent: #4895ef;
-  --light: #f8f9fa;
-  --dark: #212529;
-  --success: #4cc9f0;
-  --gray-200: #e9ecef;
-  --gray-500: #6c757d;
-  --gray-600: #495057;
-  --white: #ffffff;
-  
-  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
-  --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
-  --radius: 12px;
-  
-  --transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-/* Dark mode: aplicado cuando body tiene class="dark" */
-body.dark {
-  --light: #0f172a;
-  --dark: #f1f5f9;
+  --light: #0a0a0a;       /* Negro profundo */
+  --dark: #e2e8f0;        /* Texto claro */
+  --success: #38bdf8;
   --gray-200: #1e293b;
   --gray-500: #94a3b8;
   --gray-600: #cbd5e1;
-  --white: #1e293b;
-  color-scheme: dark;
+  --white: #121212;       /* Tarjetas: casi negro */
+  --neon-glow: 0 0 8px rgba(67, 97, 238, 0.5);
+
+  --shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.4);
+  --shadow: 0 4px 16px rgba(0, 0, 0, 0.6);
+  --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.7);
+  --radius: 14px;
+  
+  --transition: all 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-
+/* ✅ Fondo: negro espacial + partículas */
 body {
-  /* ✅ Fondo con imagen + fallback a color */
-  background-color: #f8f9fa;
-  background-image: url('/images/pic02.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed; /* efecto suave al hacer scroll */
-}
-
-/* ✅ Modo oscuro: oscurece la imagen para mejor contraste */
-body.dark {
-  background-color: #0f172a;
-  /* Superposición oscura semi-transparente */
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--dark);
+  background-color: var(--light);
+  min-height: 100vh;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-x: hidden;
   position: relative;
 }
-body.dark::before {
+
+/* ✨ Partículas estelares (CSS puro) */
+body::before {
   content: '';
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.4); /* Ajusta opacidad: 0.3–0.6 */
+  background: 
+    radial-gradient(circle at 10% 20%, rgba(67, 97, 238, 0.08) 0%, transparent 20%),
+    radial-gradient(circle at 90% 80%, rgba(56, 189, 248, 0.06) 0%, transparent 25%),
+    radial-gradient(circle at 50% 10%, rgba(114, 9, 183, 0.07) 0%, transparent 30%);
+  pointer-events: none;
+  z-index: -2;
+}
+
+/* ✨ Estrellas parpadeantes */
+body::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    /* 3 capas de estrellas con diferentes tamaños/velocidades */
+    radial-gradient(circle, white 1px, transparent 1px),
+    radial-gradient(circle, #a5b4fc 1px, transparent 1px),
+    radial-gradient(circle, #c7d2fe 1px, transparent 1px);
+  background-size: 
+    50px 50px,
+    70px 70px,
+    100px 100px;
+  background-position: 
+    0 0,
+    35px 35px,
+    50px 50px;
+  opacity: 0.3;
+  animation: twinkle 15s infinite linear;
+  pointer-events: none;
   z-index: -1;
 }
 
-
-/* ✅ Sombra suave en contenedores para mejor contraste */
-.container,
-.bio,
-.link-btn,
-footer {
-  position: relative;
-  z-index: 1; /* Asegura que estén encima del overlay oscuro */
+@keyframes twinkle {
+  0%, 100% { opacity: 0.2; }
+  25% { opacity: 0.4; }
+  50% { opacity: 0.15; }
+  75% { opacity: 0.35; }
 }
 
-/* ✅ Fondo ligeramente opaco en tarjetas (opcional pero recomendado) */
-.bio,
-.link-btn {
-  background: rgba(255, 255, 255, 0.85); /* 85% opaco */
-}
-body.dark .bio,
-body.dark .link-btn {
-  background: rgba(30, 41, 59, 0.85); /* dark mode */
-}
-
-
-
-
-
-
-
-
-
-
-
+/* ✅ Contenedor principal */
 .container {
   width: 100%;
   max-width: 500px;
   margin: 0 auto;
   text-align: center;
+  position: relative;
+  z-index: 2;
 }
 
 /* Profile */
@@ -113,59 +105,89 @@ body.dark .link-btn {
   width: 120px;
   height: 120px;
   border-radius: 50%;
-  background: linear-gradient(45deg, var(--primary), var(--accent));
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 0 auto 20px;
-  box-shadow: var(--shadow);
-  color: var(--white);
+  box-shadow: 
+    0 0 20px rgba(67, 97, 238, 0.4),
+    inset 0 0 15px rgba(255, 255, 255, 0.1);
+  color: white;
   font-size: 48px;
   font-weight: bold;
-  border: 4px solid var(--white);
+  border: 2px solid rgba(255, 255, 255, 0.08);
   flex-shrink: 0;
   overflow: hidden;
+  position: relative;
+  transition: var(--transition);
 }
 
-.profile-img.initials {
-  display: flex;
+.profile-img::after {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  border-radius: 50%;
+  background: linear-gradient(45deg, transparent, var(--accent), transparent);
+  z-index: -1;
+  animation: rotate 6s linear infinite;
+  opacity: 0.6;
+}
+
+@keyframes rotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
 
 .profile-name {
-  font-size: 2.2rem;
+  font-size: 2.3rem;
   font-weight: 800;
   margin-bottom: 8px;
-  color: var(--dark);
-  text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+  color: white;
+  text-shadow: 0 0 12px rgba(67, 97, 238, 0.6);
+  letter-spacing: -0.5px;
 }
 
 .profile-title {
-  font-size: 1.1rem;
-  color: var(--gray-600);
+  font-size: 1.15rem;
+  color: var(--gray-500);
   margin-bottom: 25px;
   font-weight: 500;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.5);
 }
 
 /* Bio */
 .bio {
   background: var(--white);
   border-radius: var(--radius);
-  padding: 20px;
+  padding: 22px;
   margin-bottom: 30px;
   box-shadow: var(--shadow);
   font-size: 1.05rem;
   line-height: 1.5;
   color: var(--gray-600);
+  position: relative;
+  overflow: hidden;
 }
-body.dark .bio {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+
+.bio::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(to bottom, var(--primary), var(--secondary));
 }
 
 /* Links */
 .links-container {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 16px;
   margin-bottom: 35px;
 }
 
@@ -173,95 +195,122 @@ body.dark .bio {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 12px;
+  gap: 14px;
   text-decoration: none;
   background: var(--white);
   color: var(--dark);
   border-radius: var(--radius);
-  padding: 16px 20px;
+  padding: 17px 22px;
   font-weight: 600;
   font-size: 1.05rem;
   box-shadow: var(--shadow-sm);
   transition: var(--transition);
   border: 1px solid var(--gray-200);
-  min-height: 56px;
+  min-height: 58px;
   cursor: pointer;
   position: relative;
   overflow: hidden;
 }
 
-.link-btn::after {
+.link-btn::before {
   content: '';
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(67, 97, 238, 0.05);
-  opacity: 0;
-  transition: opacity 0.2s;
-  pointer-events: none;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+  transform: translateX(-100%);
+  transition: transform 0.6s ease;
+}
+
+.link-btn:hover::before {
+  transform: translateX(100%);
 }
 
 .link-btn:hover,
 .link-btn:focus,
 .link-btn:active {
-  transform: translateY(-3px);
-  box-shadow: var(--shadow-lg);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg), var(--neon-glow);
   outline: none;
 }
 
-.link-btn:hover::after,
-.link-btn:focus::after,
-.link-btn.active::after {
-  opacity: 1;
-}
-
 .link-btn i {
-  font-size: 1.25rem;
-  width: 24px;
+  font-size: 1.3rem;
+  width: 26px;
   text-align: center;
   flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+
+.link-btn:hover i {
+  transform: scale(1.15);
 }
 
 .link-btn.twitter:hover { color: #1da1f2; }
 .link-btn.facebook:hover { color: #1877f2; }
 .link-btn.linkedin:hover { color: #0a66c2; }
-.link-btn.github:hover { color: #181717; }
+.link-btn.github:hover { color: #f8fafc; }
 .link-btn.gitlab:hover { color: #fc6d26; }
-.link-btn.codepen:hover { color: #000000; }
+.link-btn.codepen:hover { color: #ffffff; }
 .link-btn.resume:hover { color: var(--primary); }
 .link-btn.resources:hover { color: var(--success); }
 
-/* Social icons */
+/* Social icons ✅ Íconos visibles + neón */
 .social-links {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 15px;
-  margin: 30px 0;
+  gap: 16px;
+  margin: 35px 0;
 }
 
 .social-icon {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 50px;
-  height: 50px;
+  width: 52px;
+  height: 52px;
   border-radius: 50%;
   background: var(--white);
   color: var(--dark);
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   text-decoration: none;
   box-shadow: var(--shadow-sm);
   transition: var(--transition);
   cursor: pointer;
+  position: relative;
+  overflow: hidden;
 }
 
-.social-icon:hover,
-.social-icon:focus {
-  transform: translateY(-3px);
-  box-shadow: var(--shadow-lg);
+/* ✅ CLAVE: dimensiones explícitas + efecto neón */
+.social-icon i {
+  width: 26px;
+  height: 26px;
+  display: inline-block;
+  line-height: 1;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.social-icon::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: inherit;
+  z-index: 1;
+  transition: opacity 0.3s;
+}
+
+.social-icon:hover {
+  transform: translateY(-4px) scale(1.08);
+  box-shadow: var(--shadow-lg), 0 0 12px rgba(67, 97, 238, 0.7);
   outline: none;
 }
 
@@ -273,15 +322,15 @@ body.dark .bio {
 /* Divider */
 .divider {
   height: 1px;
-  background: linear-gradient(to right, transparent, var(--gray-200), transparent);
-  margin: 25px 0;
+  background: linear-gradient(to right, transparent, rgba(148, 163, 184, 0.2), transparent);
+  margin: 30px 0;
   width: 100%;
 }
 
 /* Footer */
 footer {
   margin-top: auto;
-  padding: 20px 0 40px;
+  padding: 25px 0 45px;
   text-align: center;
   width: 100%;
   max-width: 500px;
@@ -294,97 +343,25 @@ footer {
   margin-bottom: 8px;
 }
 
-/* ✅ Toggle de tema — flotante en esquina inferior derecha */
+/* Botón de toggle (oculto) */
 .theme-toggle {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  width: 52px;
-  height: 52px;
-  border-radius: 50%;
-  background: var(--white);
-  color: var(--dark);
-  border: none;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: var(--shadow);
-  z-index: 1000;
-  transition: var(--transition);
+  display: none;
 }
 
-.theme-toggle:hover {
-  transform: scale(1.08) rotate(15deg);
-  box-shadow: var(--shadow-lg);
-}
-
-.theme-toggle:focus {
+/* Accesibilidad */
+.link-btn:focus-visible,
+.social-icon:focus-visible {
   outline: 2px solid var(--primary);
-  outline-offset: 2px;
+  outline-offset: 3px;
 }
-
-.theme-toggle i {
-  font-size: 1.4rem;
-  transition: opacity 0.3s ease;
-}
-
-/* ✅ Mostrar/ocultar ícono según tema */
-body:not(.dark) .theme-toggle .fa-sun,
-body.dark .theme-toggle .fa-moon {
-  opacity: 0;
-  position: absolute;
-}
-
-body:not(.dark) .theme-toggle .fa-moon,
-body.dark .theme-toggle .fa-sun {
-  opacity: 1;
-}
-
-/* Screen reader only */
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
-}
-
-
-/* ✅ Fallback visual para íconos si Font Awesome no carga */
-.fallback-icon {
-  font-size: 0.85em;
-  opacity: 0.7;
-  margin-right: 6px;
-  font-family: monospace;
-  display: none; /* oculto por defecto */
-}
-
-/* Mostrar fallback solo si el ícono FA no se renderizó */
-i[class*="fa-"]:empty + .fallback-icon {
-  display: inline;
-}
-
-/* Para los íconos sociales (donde no hay texto) */
-.social-icon i:empty::before {
-  content: "?";
-  font-family: monospace;
-  font-weight: bold;
-}
-
-
-
 
 /* Responsive */
 @media (max-width: 480px) {
-  .profile-name { font-size: 1.8rem; }
-  .link-btn { padding: 14px 15px; font-size: 1rem; }
-  .social-links { gap: 10px; }
-  .social-icon { width: 44px; height: 44px; font-size: 1.2rem; }
+  .profile-name { font-size: 1.9rem; }
+  .link-btn { padding: 15px 18px; font-size: 1rem; }
+  .social-links { gap: 12px; }
+  .social-icon { width: 46px; height: 46px; font-size: 1.3rem; }
+  .social-icon i { width: 22px; height: 22px; }
   .container { padding: 0 15px; }
 }
 
@@ -392,8 +369,10 @@ i[class*="fa-"]:empty + .fallback-icon {
 @media (prefers-reduced-motion: reduce) {
   * {
     transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
   }
-  .theme-toggle:hover {
-    transform: none;
+  .profile-img::after,
+  body::after {
+    animation: none !important;
   }
 }
