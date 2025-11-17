@@ -68,7 +68,24 @@ body.dark::before {
 }
 
 
+/* ✅ Sombra suave en contenedores para mejor contraste */
+.container,
+.bio,
+.link-btn,
+footer {
+  position: relative;
+  z-index: 1; /* Asegura que estén encima del overlay oscuro */
+}
 
+/* ✅ Fondo ligeramente opaco en tarjetas (opcional pero recomendado) */
+.bio,
+.link-btn {
+  background: rgba(255, 255, 255, 0.85); /* 85% opaco */
+}
+body.dark .bio,
+body.dark .link-btn {
+  background: rgba(30, 41, 59, 0.85); /* dark mode */
+}
 
 
 
