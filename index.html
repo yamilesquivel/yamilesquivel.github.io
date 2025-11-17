@@ -1,12 +1,12 @@
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
- </head>
-<body>
-<!DOCTYPE html>
+                        <!DOCTYPE html>
+                        <html lang="en">
+                        <head>
+                            <meta charset="UTF-8">
+                            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                        </head>
+                        <body>
+                            <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -52,7 +52,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <!-- Enlace al CSS externo -->
-    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/main.css">
 </head>
 <body>
     <div class="container">
@@ -129,43 +129,6 @@
     <script src="assets/js/main.js"></script>
 </body>
 </html>
-
-
-    
-              <script>
-                              // assets/js/main.js
-// Actualizar año automáticamente
-document.getElementById('current-year').textContent = new Date().getFullYear();
-
-// Efecto hover mejorado para móviles
-document.querySelectorAll('.link-btn, .social-icon').forEach(element => {
-    element.addEventListener('touchstart', function() {
-        this.classList.add('active');
-    });
-    
-    element.addEventListener('touchend', function() {
-        this.classList.remove('active');
-    });
-});
-
-// Analytics para clicks en enlaces
-document.querySelectorAll('.link-btn, .social-icon').forEach(link => {
-    link.addEventListener('click', function() {
-        if (typeof gtag === 'function') {
-            gtag('event', 'link_click', {
-                'event_category': 'engagement',
-                'event_label': this.textContent.trim() || this.getAttribute('aria-label')
-            });
-        }
-    });
-});
-
-
-              </script>
                         </body>
                         </html>
                     
-
-
-
-

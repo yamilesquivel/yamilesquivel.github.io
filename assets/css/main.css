@@ -1,7 +1,8 @@
-  body {
-                  background-color: 0000; /* Ensure the iframe has a white background */
-                }        /* assets/css/main.css */
-* {
+ body {
+                  background-color: white; /* Ensure the iframe has a white background */
+                }
+    
+                * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -28,9 +29,6 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-image: url('https://tu-dominio.com/assets/images/background-pattern.svg');
-    background-size: cover;
-    background-attachment: fixed;
 }
 
 .container {
@@ -58,8 +56,6 @@ body {
     font-size: 48px;
     font-weight: bold;
     border: 4px solid white;
-    background-image: url('../images/profile-background.jpg');
-    background-size: cover;
 }
 
 .profile-name {
@@ -87,9 +83,6 @@ body {
     font-size: 1.05rem;
     line-height: 1.5;
     color: #495057;
-    background-image: url('../images/bio-background.jpg');
-    background-size: cover;
-    background-position: center;
 }
 
 .links-container {
@@ -115,9 +108,6 @@ body {
     justify-content: center;
     gap: 12px;
     border: 1px solid #e9ecef;
-    background-image: url('../images/button-background.jpg');
-    background-size: cover;
-    background-position: center;
 }
 
 .link-btn:hover {
@@ -221,5 +211,4 @@ footer {
     .container {
         padding: 0 15px;
     }
-}
-         
+};
