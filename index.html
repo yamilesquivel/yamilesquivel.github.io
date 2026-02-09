@@ -1,185 +1,277 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <meta name="description" content="Portfolio personal de Yamil Esquivel — Desarrollador IT, soluciones tecnológicas, proyectos y recursos de aprendizaje.">
-  <meta name="keywords" content="Yamil Esquivel, portfolio, desarrollador, programador, IT, full-stack, github, linkedin">
-  <meta name="author" content="Yamil Esquivel">
-  <meta name="robots" content="index, follow">
-  <meta name="theme-color" content="#4361ee">
+import { useState, useEffect } from 'react';
 
-  <!-- Open Graph -->
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://tu-dominio.com/">
-  <meta property="og:title" content="Yamil Esquivel | Portfolio Personal Development IT">
-  <meta property="og:description" content="Portfolio personal de Yamil Esquivel — Desarrollador IT con proyectos, repositorios y recursos de aprendizaje.">
-  <meta property="og:image" content="https://tu-dominio.com/assets/img/portfolio-preview.jpg">
-  <meta property="og:image:alt" content="Yamil Esquivel - Desarrollador IT">
+export default function App() {
+  const [darkMode, setDarkMode] = useState(false);
+  const currentYear = new Date().getFullYear();
 
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Yamil Esquivel | Portfolio Personal Development IT">
-  <meta name="twitter:description" content="Portfolio personal de Yamil Esquivel — Desarrollador IT con proyectos, repositorios y recursos de aprendizaje.">
-  <meta name="twitter:image" content="https://tu-dominio.com/assets/img/portfolio-preview.jpg">
-
-  <link rel="canonical" href="https://tu-dominio.com/">
-
-  <!-- ✅ Favicon -->
-  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
-  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
-
-  <!-- ✅ Font Awesome CDN (versión segura, sin integrity) -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-  <!-- ✅ PWA Manifest -->
-  <link rel="manifest" href="manifest.json">
-
-  <!-- ✅ iOS Support -->
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="default">
-  <meta name="apple-mobile-web-app-title" content="Yamil Dev">
-
-  <!-- ✅ CSS principal -->
-  <link rel="stylesheet" href="assets/css/main.css">
-
-  <title>Yamil Esquivel | Portfolio Personal Development IT</title>
-</head>
-<body>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Yamil Esquivel",
-    "url": "https://tu-dominio.com/",
-    "sameAs": [
-      "http://bit.ly/twiter-3gw8hL5",
-      "http://bit.ly/facebook-2QTt0xm",
-      "http://bit.ly/likedin-2Pf0Nkh",
-      "http://bit.ly/repositorios-3nd5ojo"
-    ],
-    "jobTitle": "Desarrollador IT & Soluciones Tecnológicas"
-  }
-  </script>
-
-  <div class="container">
-    <section class="profile" aria-labelledby="profile-heading">
-      <div class="profile-img initials" role="img" aria-label="Foto de perfil de Yamil Esquivel">
-        Y E
-      </div>
-      <h1 id="profile-heading" class="profile-name">Yamil Esquivel</h1>
-      <p class="profile-title">Desarrollo IT & Soluciones Tecnológicas</p>
-    </section>
-
-    <section class="bio" role="region" aria-label="Biografía">
-      <blockquote cite="https://en.wikipedia.org/wiki/Hamlet">
-        &ldquo;We know what we are, but know not what we may be.&rdquo;<br>
-        <cite>― William Shakespeare</cite>
-      </blockquote>
-    </section>
-
-    <nav class="links-container" aria-label="Enlaces principales">
-  <a href="http://bit.ly/twiter-3gw8hL5" class="link-btn twitter" target="_blank" rel="noopener noreferrer" role="button">
-    <i class="fab fa-twitter" aria-hidden="true"></i> Twitter
-  </a>
-  <a href="http://bit.ly/facebook-2QTt0xm" class="link-btn facebook" target="_blank" rel="noopener noreferrer" role="button">
-    <i class="fab fa-facebook-f" aria-hidden="true"></i> Facebook
-  </a>
-  <a href="http://bit.ly/likedin-2Pf0Nkh" class="link-btn linkedin" target="_blank" rel="noopener noreferrer" role="button">
-    <i class="fab fa-linkedin-in" aria-hidden="true"></i> LinkedIn
-  </a>
-  <a href="https://archive.org/" class="link-btn resources" target="_blank" rel="noopener noreferrer" role="button">
-    <i class="fas fa-book-open" aria-hidden="true"></i> Resource-learn
-  </a>
-  <a href="http://bit.ly/repositorios-3nd5ojo" class="link-btn github" target="_blank" rel="noopener noreferrer" role="button">
-    <i class="fab fa-github" aria-hidden="true"></i> GitHub
-  </a>
-  <a href="https://gitlab.com/" class="link-btn gitlab" target="_blank" rel="noopener noreferrer" role="button">
-    <i class="fab fa-gitlab" aria-hidden="true"></i> GitLab
-  </a>
-  <a href="https://codepen.io/" class="link-btn codepen" target="_blank" rel="noopener noreferrer" role="button">
-    <i class="fab fa-codepen" aria-hidden="true"></i> CodePen
-  </a>
-  <a href="http://bit.ly/docgoogle-3vcQuMV" class="link-btn resume" target="_blank" rel="noopener noreferrer" role="button">
-    <i class="fas fa-file-alt" aria-hidden="true"></i> Resume
-  </a>
-  
-  <!-- ✅ BOTÓN DE BLOG (agregado aquí) -->
-  <a href="https://tu-blog.com" class="link-btn blog" target="_blank" rel="noopener noreferrer" role="button">
-    <i class="fas fa-rss" aria-hidden="true"></i> Blog
-  </a>
-  
-  <a href="https://github.com/yamilesquivel?tab=repositories" class="link-btn" target="_blank" rel="noopener noreferrer" role="button">
-    <i class="fas fa-link" aria-hidden="true"></i> Anexo
-  </a>
-</nav>
-
-
-    <div class="divider" aria-hidden="true"></div>
-
-    
-
-    <nav class="social-links" aria-label="Redes sociales (íconos)">
-  <a href="http://bit.ly/twiter-3gw8hL5" class="social-icon twitter" aria-label="Twitter" target="_blank" rel="noopener noreferrer">
-    <i class="fab fa-twitter" aria-hidden="true"></i>
-  </a>
-  <a href="http://bit.ly/facebook-2QTt0xm" class="social-icon facebook" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
-    <i class="fab fa-facebook-f" aria-hidden="true"></i>
-  </a>
-  <a href="http://bit.ly/likedin-2Pf0Nkh" class="social-icon linkedin" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
-    <i class="fab fa-linkedin-in" aria-hidden="true"></i>
-  </a>
-  <a href="http://bit.ly/repositorios-3nd5ojo" class="social-icon github" aria-label="GitHub" target="_blank" rel="noopener noreferrer">
-    <i class="fab fa-github" aria-hidden="true"></i>
-  </a>
-  
-  <!-- ✅ ÍCONO DE BLOG (agregado aquí) -->
-  <a href="https://tu-blog.com" class="social-icon blog" aria-label="Blog" target="_blank" rel="noopener noreferrer">
-    <i class="fas fa-rss" aria-hidden="true"></i>
-  </a>
-</nav>
-
-
-
-  </div>
-
-  <footer>
-    <div class="copyright">
-      &copy; <span id="current-year">2025</span> Yamil Esquivel. Todos los derechos reservados.
-    </div>
-    <div class="copyright">
-      Portfolio Personal de Desarrollo IT
-    </div>
-  </footer>
-
-  <!-- ✅ Botón de toggle dark/light mode -->
-  <button id="theme-toggle" class="theme-toggle" aria-label="Cambiar modo de color">
-    <i class="fas fa-moon" aria-hidden="true"></i>
-    <i class="fas fa-sun" aria-hidden="true"></i>
-    <span class="sr-only">Alternar tema claro/oscuro</span>
-  </button>
-
-  <!-- ✅ Google Analytics (seguro) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-XXXXXXXXXX', { anonymize_ip: true });
-  </script>
-
-  <!-- ✅ Registrar Service Worker -->
-  <script>
-    if ('serviceWorker' in navigator) {
-      window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/service-worker.js')
-          .then(reg => console.log('[SW] Registrado:', reg.scope))
-          .catch(err => console.warn('[SW] Error:', err));
-      });
+  useEffect(() => {
+    const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    if (systemPrefersDark) {
+      setDarkMode(true);
+      document.documentElement.classList.add('dark');
     }
-  </script>
+  }, []);
 
-  <!-- ✅ JavaScript principal -->
-  <script src="assets/js/main.js" defer></script>
-</body>
-</html>
+  const toggleTheme = () => {
+    const newDarkMode = !darkMode;
+    setDarkMode(newDarkMode);
+    document.documentElement.classList.toggle('dark', newDarkMode);
+  };
+
+  return (
+    <div className="min-h-screen bg-gradient-to-br from-indigo-50 to-blue-100 dark:from-gray-900 dark:to-indigo-900/30 transition-colors duration-300">
+      <style jsx>{`
+        /* --- ESTILOS PARA EL AVATAR CON EFECTO DE FUEGO --- */
+        .fire-avatar {
+          width: 120px;
+          height: 120px;
+          border-radius: 50%;
+          position: relative;
+          margin: 0 auto 20px;
+          overflow: hidden;
+          box-shadow: 0 8px 25px rgba(255, 80, 0, 0.45);
+          border: 3px solid rgba(255, 255, 255, 0.5);
+          background: radial-gradient(circle at 50% 100%, #1a1a1a 60%, #0a0a0a 100%);
+          transition: transform 0.3s ease;
+          display: flex;
+          justify-content: center;
+          align-items: flex-end;
+          isolation: isolate;
+        }
+
+        .fire-avatar:hover {
+          transform: scale(1.08);
+          box-shadow: 0 10px 30px rgba(255, 60, 0, 0.55);
+        }
+
+        /* Contenedor de las llamas */
+        .fire-container {
+          position: absolute;
+          bottom: 15px;
+          width: 60px;
+          height: 80px;
+          display: flex;
+          justify-content: center;
+        }
+
+        /* Efecto de llama base */
+        .fire {
+          position: absolute;
+          bottom: 0;
+          width: 20px;
+          height: 40px;
+          background: radial-gradient(circle, #ff5e00, #ff0000, #ff9d00, transparent 70%);
+          border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+          transform: translateX(-50%);
+          animation: fire-flicker 1.8s infinite;
+          filter: blur(1px);
+        }
+
+        /* Capas adicionales para profundidad */
+        .fire::before,
+        .fire::after {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          width: 100%;
+          height: 100%;
+          background: inherit;
+          border-radius: inherit;
+        }
+
+        .fire::before {
+          left: -10px;
+          animation: fire-left 2.2s infinite;
+          opacity: 0.8;
+          filter: blur(1.5px);
+        }
+
+        .fire::after {
+          right: -10px;
+          animation: fire-right 2.5s infinite;
+          opacity: 0.7;
+          filter: blur(1.2px);
+        }
+
+        /* Llama central más grande */
+        .fire-main {
+          width: 28px;
+          height: 55px;
+          bottom: -5px;
+          animation-delay: -0.4s;
+          background: radial-gradient(circle, #fff 10%, #ffcc00 30%, #ff5e00 60%, #ff0000 80%, transparent 90%);
+          z-index: 3;
+        }
+
+        /* Chispas flotantes */
+        .spark {
+          position: absolute;
+          width: 4px;
+          height: 4px;
+          background: #fff;
+          border-radius: 50%;
+          bottom: 20px;
+          animation: spark-rise 1.5s infinite;
+          opacity: 0.9;
+        }
+
+        .spark:nth-child(1) { left: 35%; animation-delay: 0s; }
+        .spark:nth-child(2) { left: 45%; animation-delay: -0.3s; }
+        .spark:nth-child(3) { left: 55%; animation-delay: -0.6s; }
+        .spark:nth-child(4) { left: 65%; animation-delay: -0.9s; }
+
+        /* Animaciones */
+        @keyframes fire-flicker {
+          0%, 100% { transform: translateX(-50%) scale(1); opacity: 1; }
+          25% { transform: translateX(-45%) scale(1.05); opacity: 0.95; }
+          50% { transform: translateX(-55%) scale(0.95); opacity: 1; }
+          75% { transform: translateX(-48%) scale(1.02); opacity: 0.9; }
+        }
+
+        @keyframes fire-left {
+          0%, 100% { transform: translate(0, 0); }
+          33% { transform: translate(5px, -8px) scale(1.1); }
+          66% { transform: translate(-3px, -5px) scale(0.9); }
+        }
+
+        @keyframes fire-right {
+          0%, 100% { transform: translate(0, 0); }
+          33% { transform: translate(-5px, -8px) scale(1.1); }
+          66% { transform: translate(3px, -5px) scale(0.9); }
+        }
+
+        @keyframes spark-rise {
+          0% { 
+            transform: translateY(0) translateX(0);
+            opacity: 0.9;
+            width: 4px;
+            height: 4px;
+          }
+          50% {
+            opacity: 0.7;
+          }
+          100% {
+            transform: translateY(-35px) translateX(calc(var(--offset, 0) * 1px));
+            opacity: 0;
+            width: 0;
+            height: 0;
+          }
+        }
+
+        .fire-avatar:focus-within {
+          outline: 3px solid rgba(255, 80, 0, 0.6);
+          outline-offset: 4px;
+        }
+
+        .link-btn:focus-visible, .theme-toggle:focus-visible {
+          outline: 2px solid #4361ee;
+          outline-offset: 2px;
+        }
+      `}</style>
+
+      <div className="container mx-auto px-4 py-12 max-w-3xl">
+        <section className="profile text-center mb-12" aria-labelledby="profile-heading">
+          {/* AVATAR CON EFECTO DE FUEGO ANIMADO */}
+          <div 
+            className="fire-avatar" 
+            role="img" 
+            aria-label="Avatar con efecto de fuego animado representando energía y pasión"
+          >
+            <div className="fire-container">
+              <div className="fire fire-main"></div>
+              <div className="fire"></div>
+              <div className="spark" style={{ '--offset': 2 }}></div>
+              <div className="spark" style={{ '--offset': -3 }}></div>
+              <div className="spark" style={{ '--offset': 4 }}></div>
+              <div className="spark" style={{ '--offset': -2 }}></div>
+            </div>
+          </div>
+          
+          <h1 id="profile-heading" className="profile-name text-4xl font-bold text-gray-900 dark:text-white mt-4">
+            Yamil Esquivel
+          </h1>
+          <p className="profile-title text-xl text-indigo-700 dark:text-indigo-300 mt-2">
+            Desarrollo IT & Soluciones Tecnológicas
+          </p>
+        </section>
+
+        <section className="bio bg-white dark:bg-gray-800 rounded-2xl p-6 shadow-lg mb-12" role="region" aria-label="Biografía">
+          <blockquote className="text-center text-lg italic border-l-4 border-indigo-500 pl-4 py-2">
+            &ldquo;We know what we are, but know not what we may be.&rdquo;
+            <br />
+            <cite className="block mt-2 text-indigo-700 dark:text-indigo-300 not-italic">― William Shakespeare</cite>
+          </blockquote>
+        </section>
+
+        <nav className="links-container space-y-3 mb-12" aria-label="Enlaces principales">
+          {[
+            { href: "http://bit.ly/twiter-3gw8hL5", label: "Twitter", icon: "🐦", color: "bg-sky-500 hover:bg-sky-600" },
+            { href: "http://bit.ly/facebook-2QTt0xm", label: "Facebook", icon: "𝑓", color: "bg-blue-600 hover:bg-blue-700" },
+            { href: "http://bit.ly/likedin-2Pf0Nkh", label: "LinkedIn", icon: "in", color: "bg-sky-700 hover:bg-sky-800" },
+            { href: "https://archive.org/", label: "Resource-learn", icon: "📚", color: "bg-emerald-600 hover:bg-emerald-700" },
+            { href: "http://bit.ly/repositorios-3nd5ojo", label: "GitHub", icon: "🐙", color: "bg-gray-800 hover:bg-gray-900 dark:bg-gray-700 dark:hover:bg-gray-600" },
+            { href: "https://gitlab.com/", label: "GitLab", icon: "GL", color: "bg-orange-600 hover:bg-orange-700" },
+            { href: "https://codepen.io/", label: "CodePen", icon: "</>", color: "bg-black hover:bg-gray-800" },
+            { href: "http://bit.ly/docgoogle-3vcQuMV", label: "Resume", icon: "📄", color: "bg-indigo-600 hover:bg-indigo-700" },
+            { href: "https://tu-blog.com", label: "Blog", icon: "📡", color: "bg-rose-500 hover:bg-rose-600" },
+            { href: "https://github.com/yamilesquivel?tab=repositories", label: "Anexo", icon: "📎", color: "bg-purple-600 hover:bg-purple-700" }
+          ].map((link, index) => (
+            <a
+              key={index}
+              href={link.href}
+              className={`link-btn flex items-center justify-center w-full py-3 rounded-xl font-medium text-white transition-all duration-300 ${link.color} hover:shadow-lg hover:-translate-y-0.5`}
+              target="_blank"
+              rel="noopener noreferrer"
+              role="button"
+            >
+              <span className="mr-2 text-xl">{link.icon}</span>
+              {link.label}
+            </a>
+          ))}
+        </nav>
+
+        <div className="divider h-1 bg-gradient-to-r from-transparent via-indigo-500 to-transparent mb-12" aria-hidden="true"></div>
+
+        <nav className="social-links flex justify-center space-x-4 mb-12" aria-label="Redes sociales">
+          {[
+            { href: "http://bit.ly/twiter-3gw8hL5", label: "Twitter", icon: "𝕏", color: "bg-sky-500 hover:bg-sky-600" },
+            { href: "http://bit.ly/facebook-2QTt0xm", label: "Facebook", icon: "𝑓", color: "bg-blue-600 hover:bg-blue-700" },
+            { href: "http://bit.ly/likedin-2Pf0Nkh", label: "LinkedIn", icon: "in", color: "bg-sky-700 hover:bg-sky-800" },
+            { href: "http://bit.ly/repositorios-3nd5ojo", label: "GitHub", icon: "🐙", color: "bg-gray-800 hover:bg-gray-900 dark:bg-gray-700 dark:hover:bg-gray-600" },
+            { href: "https://tu-blog.com", label: "Blog", icon: "📡", color: "bg-rose-500 hover:bg-rose-600" }
+          ].map((social, index) => (
+            <a
+              key={index}
+              href={social.href}
+              className={`social-icon w-12 h-12 rounded-full flex items-center justify-center text-white text-lg font-bold shadow-md transition-all duration-300 ${social.color} hover:scale-110`}
+              aria-label={social.label}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {social.icon}
+            </a>
+          ))}
+        </nav>
+      </div>
+
+      <footer className="py-6 text-center text-gray-600 dark:text-gray-400 border-t border-gray-200 dark:border-gray-700">
+        <div className="copyright">&copy; {currentYear} Yamil Esquivel. Todos los derechos reservados.</div>
+        <div className="copyright mt-1">Portfolio Personal de Desarrollo IT</div>
+      </footer>
+
+      <button 
+        id="theme-toggle" 
+        className="theme-toggle fixed bottom-6 right-6 w-14 h-14 rounded-full bg-indigo-600 text-white shadow-lg flex items-center justify-center text-xl hover:bg-indigo-700 transition-colors duration-300 z-50"
+        onClick={toggleTheme}
+        aria-label="Cambiar modo de color"
+      >
+        {darkMode ? (
+          <span aria-hidden="true">☀️</span>
+        ) : (
+          <span aria-hidden="true">🌙</span>
+        )}
+        <span className="sr-only">Alternar tema claro/oscuro</span>
+      </button>
+    </div>
+  );
+}
