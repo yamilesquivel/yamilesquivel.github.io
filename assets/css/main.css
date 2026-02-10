@@ -120,46 +120,58 @@ body::after {
   background: radial-gradient(circle at 50% 80%, #ffdd55 0%, #ff8800 40%, #ff3300 70%, #660000 100%);
   box-shadow: 0 0 25px rgba(255, 120, 0, 0.6);
 }
-/* solo para prueba */
-.profile-img { overflow: visible; }
 
 
-/* CAPA DE LLAMAS — MÁS VISIBLES */
+
+
+/* LLAMAS ADAPTADAS AL CÍRCULO */
 .profile-img::before,
 .profile-img::after {
   content: "";
   position: absolute;
-  bottom: -10%;
-  left: -20%;
-  width: 140%;
-  height: 140%;
-  background: radial-gradient(circle at 50% 100%,
-    rgba(255,255,255,1) 0%,
-    rgba(255,220,120,0.95) 15%,
-    rgba(255,140,0,0.85) 35%,
-    rgba(255,60,0,0.7) 55%,
-    rgba(180,0,0,0.4) 70%,
-    transparent 80%);
-  border-radius: 40%;
-  filter: blur(4px); /* menos blur = más detalle */
-  animation: flameMove 1.6s infinite ease-in-out alternate;
+  inset: 0; /* ocupa todo el círculo */
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 50% 85%, rgba(255,255,255,0.95) 0%, rgba(255,220,120,0.9) 15%, rgba(255,140,0,0.8) 35%, rgba(255,60,0,0.6) 55%, transparent 70%),
+    radial-gradient(circle at 30% 90%, rgba(255,200,0,0.6) 0%, transparent 60%),
+    radial-gradient(circle at 70% 95%, rgba(255,80,0,0.5) 0%, transparent 65%);
+  mix-blend-mode: screen;
+  animation: flameInside 2s infinite ease-in-out alternate;
+  filter: blur(6px);
   z-index: 0;
 }
 
 .profile-img::after {
-  animation-delay: 0.8s;
-  opacity: 0.8;
-  filter: blur(6px);
+  animation-delay: 1s;
+  opacity: 0.7;
+  filter: blur(10px);
 }
 
-/* ANIMACIÓN MÁS DRAMÁTICA */
-@keyframes flameMove {
-  0%   { transform: translateY(10px) scaleX(0.9) scaleY(0.9) rotate(-2deg); }
-  25%  { transform: translateY(-5px) scaleX(1.1) scaleY(1.1) rotate(2deg); }
-  50%  { transform: translateY(-18px) scaleX(0.95) scaleY(1.25) rotate(-1deg); }
-  75%  { transform: translateY(-8px) scaleX(1.05) scaleY(1.1) rotate(1deg); }
-  100% { transform: translateY(-22px) scaleX(1) scaleY(1.3) rotate(-2deg); }
+/* TEXTO SOBRE EL FUEGO */
+.profile-img > * {
+  position: relative;
+  z-index: 2;
 }
+
+/* MOVIMIENTO INTERNO DEL FUEGO */
+@keyframes flameInside {
+  0% {
+    transform: translateY(8px) scale(1) rotate(-1deg);
+  }
+  25% {
+    transform: translateY(-4px) scale(1.05) rotate(1deg);
+  }
+  50% {
+    transform: translateY(-10px) scale(1.1) rotate(-1deg);
+  }
+  75% {
+    transform: translateY(-6px) scale(1.05) rotate(1deg);
+  }
+  100% {
+    transform: translateY(-12px) scale(1.12) rotate(-1deg);
+  }
+}
+
 
 
 /*
