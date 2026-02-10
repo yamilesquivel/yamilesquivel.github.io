@@ -13,7 +13,7 @@ que pruebo tratando de generar alguna parte visual para que sea mas amigable con
 paso del tiempo.  
 
 - - - - -
-###  Insinias sociales
+###  ...
 
   ![GitHub followers](https://img.shields.io/github/followers/yamilesquivel?style=social)
   [![Twitter Follow](https://img.shields.io/twitter/follow/yamilesquiveltw.svg?style=social&label=Follow)](https://twitter.com/yamilesquiveltw)
